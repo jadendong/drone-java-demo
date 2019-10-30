@@ -1,0 +1,22 @@
+kind: pipeline
+name: maven 构建 java 项目
+
+steps:
+  - name: Maven 编译
+    image: maven:3.6.2-jdk-8
+    volumes:
+      - name: cache
+        path: /root/.m2
+    commands:
+      - mvn clean install
+    when:
+      branch: master
+      event: [ push ]
+
+  - name: 通过server酱发送微信通知
+      image: yakumioto/serverchan
+      settings:
+        key: serverchan_key
+        text: drone 通知
+        desp: 项目 drone java demo构建成功
+
