@@ -16,6 +16,6 @@ steps:
   - name: send-wechat
       image: yakumioto/serverchan
       settings:
-        key: serverchan_key
+        key: SCU65337T9a3aabd69bff82c132da7db6c743dad85db8d23dd7d06
         text: drone 通知
         desp: 项目 drone java demo构建成功
