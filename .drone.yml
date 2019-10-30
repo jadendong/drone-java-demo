@@ -13,10 +13,9 @@ steps:
       branch: master
       event: [ push ]
 
-  - name: 通过server酱发送微信通知
+  - name: send-wechat
       image: yakumioto/serverchan
       settings:
         key: serverchan_key
         text: drone 通知
         desp: 项目 drone java demo构建成功
-
